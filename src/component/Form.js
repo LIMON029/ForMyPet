@@ -2,9 +2,9 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import "../css/Form.css";
 
-function Form({cal, gram, calChangeHandler, gramChangeHandler, clickHandler}) {
+function Form({cal, gram, calc, isForGram, calChangeHandler, gramChangeHandler, calcChangeHandler, IsForGramHandler, IsForCalcHandler, clickHandler}) {
   const onClickHandler = () => {
-    if(cal > 0 && gram > 0) {
+    if(cal > 0 && gram > 0 && calc > 0) {
       clickHandler();
     } else {
       alert("칼로리나 무게는 0이 될 수 없습니다.");
@@ -12,7 +12,7 @@ function Form({cal, gram, calChangeHandler, gramChangeHandler, clickHandler}) {
   };
 
   const enterKeyHandler = (event) => {
-    if(event.key == 'Enter') {
+    if(event.key === 'Enter') {
       onClickHandler();
     }
   }
@@ -40,6 +40,20 @@ function Form({cal, gram, calChangeHandler, gramChangeHandler, clickHandler}) {
               value={gram}
               onChange={gramChangeHandler}
               onKeyPress={enterKeyHandler} />
+          <label htmlFor='calc_input'>계산할 값</label>
+          <input
+              placeholder="계산할 값을 입력하세요"
+              type="number"
+              name='calc_input'
+              id='calc_input'
+              className='form-control'
+              value={calc}
+              onChange={calcChangeHandler}
+              onKeyPress={enterKeyHandler} />
+          <div>
+            <button className={isForGram ? 'btn btn-info typeSelectBtn leftBtn selectedBtn' : 'btn btn-info typeSelectBtn leftBtn'} onClick={IsForGramHandler}>무게</button>
+            <button className={isForGram ? 'btn btn-info typeSelectBtn rightBtn' : 'btn btn-info typeSelectBtn rightBtn selectedBtn'} onClick={IsForCalcHandler}>칼로리</button>
+          </div>
           <button className="btn btn-info calc_btn" onClick={onClickHandler}>계산</button>
         </div>
     </div>
