@@ -9,6 +9,12 @@ function Form({cal, gram, calChangeHandler, gramChangeHandler, clickHandler}) {
     } else {
       alert("칼로리나 무게는 0이 될 수 없습니다.");
     }
+  };
+
+  const enterKeyHandler = (event) => {
+    if(event.key == 'Enter') {
+      onClickHandler();
+    }
   }
 
   return (
@@ -22,7 +28,8 @@ function Form({cal, gram, calChangeHandler, gramChangeHandler, clickHandler}) {
               name='cal_input'
               className='form-control'
               value={cal}
-              onChange={calChangeHandler} />
+              onChange={calChangeHandler}
+              onKeyPress={enterKeyHandler} />
           <label htmlFor='gram_input'>무게(g)</label>
           <input
               placeholder="무게(g)"
@@ -31,7 +38,8 @@ function Form({cal, gram, calChangeHandler, gramChangeHandler, clickHandler}) {
               id='gram_input'
               className='form-control'
               value={gram}
-              onChange={gramChangeHandler}/>
+              onChange={gramChangeHandler}
+              onKeyPress={enterKeyHandler} />
           <button className="btn btn-info calc_btn" onClick={onClickHandler}>계산</button>
         </div>
     </div>
