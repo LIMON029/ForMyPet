@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ForMyPet/static/css/main.8d6a7012.css",
-    "main.js": "/ForMyPet/static/js/main.810765f5.js",
+    "main.css": "/ForMyPet/static/css/main.fc85afde.css",
+    "main.js": "/ForMyPet/static/js/main.52a051dd.js",
     "index.html": "/ForMyPet/index.html",
-    "main.8d6a7012.css.map": "/ForMyPet/static/css/main.8d6a7012.css.map",
-    "main.810765f5.js.map": "/ForMyPet/static/js/main.810765f5.js.map"
+    "main.fc85afde.css.map": "/ForMyPet/static/css/main.fc85afde.css.map",
+    "main.52a051dd.js.map": "/ForMyPet/static/js/main.52a051dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d6a7012.css",
-    "static/js/main.810765f5.js"
+    "static/css/main.fc85afde.css",
+    "static/js/main.52a051dd.js"
   ]
 }
