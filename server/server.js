@@ -3,10 +3,10 @@ const app = express();
 const cors = require('cors');
 const PORT = 5000;
 
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: process.env.REACT_APP_CLIENT_URL }));
 
-app.use('/test', require('./routes/index'));
-app.get('/', (req, res) => {
+app.use('/api/test', require('./routes/index'));
+app.get('/api/', (req, res) => {
     res.send('Server Response Success');
 });
 

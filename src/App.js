@@ -10,7 +10,7 @@ import Test from './routes/Test';
 
 function App() {
   useEffect(() => {
-    axios.get('http://localhost:5000/test')
+    axios.get('/api/test')
       .then(res => console.log(res))
       .catch((Error)=>{console.log(Error)})
   });
