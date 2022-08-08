@@ -6,18 +6,20 @@ import {
   Route
 } from 'react-router-dom';
 import MainCalculator from './routes/MainCalculator';
+import Test from './routes/Test';
 
 function App() {
   useEffect(() => {
-    axios.get('/api/test')
+    axios.get('http://localhost:5000/test')
       .then(res => console.log(res))
-      .catch()
+      .catch((Error)=>{console.log(Error)})
   });
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainCalculator />}/>
+        <Route path="/test" element={<Test />}/>
       </Routes>
     </BrowserRouter>
   );
