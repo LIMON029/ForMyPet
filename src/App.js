@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -7,6 +8,12 @@ import {
 import MainCalculator from './routes/MainCalculator';
 
 function App() {
+  useEffect(() => {
+    axios.get('/api/test')
+      .then(res => console.log(res))
+      .catch()
+  });
+
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
