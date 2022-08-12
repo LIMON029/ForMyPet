@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 
-export const GoToMainBtn=styled.a`
-    font-size: 20px;
-    color: #8896ff;
-    &:hover {
-        color: #626cb5;
-        text-decoration: none;
-    }
-`;
-
 export const FormContainer=styled.div`
     width: 380px;
     padding: 20px;
