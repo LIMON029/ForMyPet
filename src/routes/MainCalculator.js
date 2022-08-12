@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Form from "../component/Form"
+import Form from "../component/CalculatorForm"
 import Result from "../component/Result"
+import {GoToMainBtn} from "../component/Btns"
 
 function MainCalculator() {
   const [cal, setCal] = useState(0);
@@ -43,6 +44,7 @@ function MainCalculator() {
 
   return (
     <div className='mainContainer'>
+      <GoToMainBtn />
       {isSubmit
         ? <Result cal={cal} gram={gram} forCalc={forCalc} isForGram={isForGram} clickHandler={resetClcikHandler}/>
         : <Form

@@ -1,16 +1,16 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import "../css/Form.css";
+import {FormContainer, CalcBtn} from "../css/CalculatorFormStyled";
 
 function Result({cal, gram, forCalc, isForGram, clickHandler}) {
   return (
-    <div className='formContainer'>
-        <p>입력하신 칼로리는 {cal}kcal, 무게는 {gram}g입니다</p>
-        <p>1g당 칼로리: {cal/gram}kcal</p>
-        <p>1kcal당 무게: {gram/cal}g</p>
-        <p>{forCalc}{isForGram ? `g은 ${(cal/gram) * forCalc}kcal`: `kcal은 ${(gram/cal) * forCalc}g`}입니다. </p>
-        <button className="btn btn-info calc_btn" onClick={clickHandler}>다시 계산하기</button>
-    </div>
+    <FormContainer>
+      <p>입력하신 칼로리는 {cal}kcal, 무게는 {gram}g입니다</p>
+      <p>1g당 칼로리: {cal/gram}kcal</p>
+      <p>1kcal당 무게: {gram/cal}g</p>
+      <p>{forCalc}{isForGram ? `g은 ${(cal/gram) * forCalc}kcal`: `kcal은 ${(gram/cal) * forCalc}g`}입니다. </p>
+      <CalcBtn className="btn btn-info" onClick={clickHandler}>다시 계산하기</CalcBtn>
+    </FormContainer>
   );
 }
 

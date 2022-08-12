@@ -1,6 +1,6 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import "../css/Form.css";
+import * as S from "../css/CalculatorFormStyled";
 
 function Form({cal, gram, calc, isForGram, calChangeHandler, gramChangeHandler, calcChangeHandler, IsForGramHandler, IsForCalcHandler, clickHandler}) {
   const onClickHandler = () => {
@@ -18,10 +18,10 @@ function Form({cal, gram, calc, isForGram, calChangeHandler, gramChangeHandler, 
   }
 
   return (
-    <div className='formContainer'>
+    <S.FormContainer>
       <div>
           <label htmlFor='cal_input'>칼로리(kcal)</label>
-          <input
+          <S.InputStyle
               placeholder="칼로리(kcal)"
               type="number"
               id='cal_input'
@@ -31,7 +31,7 @@ function Form({cal, gram, calc, isForGram, calChangeHandler, gramChangeHandler, 
               onChange={calChangeHandler}
               onKeyPress={enterKeyHandler} />
           <label htmlFor='gram_input'>무게(g)</label>
-          <input
+          <S.InputStyle
               placeholder="무게(g)"
               type="number"
               name='gram_input'
@@ -51,12 +51,12 @@ function Form({cal, gram, calc, isForGram, calChangeHandler, gramChangeHandler, 
               onChange={calcChangeHandler}
               onKeyPress={enterKeyHandler} />
           <div>
-            <button className={isForGram ? 'btn btn-info typeSelectBtn leftBtn selectedBtn' : 'btn btn-info typeSelectBtn leftBtn'} onClick={IsForGramHandler}>무게</button>
-            <button className={isForGram ? 'btn btn-info typeSelectBtn rightBtn' : 'btn btn-info typeSelectBtn rightBtn selectedBtn'} onClick={IsForCalcHandler}>칼로리</button>
+            <S.TypeSelectBtn type={"left"} isForGram={isForGram} className="btn btn-info" onClick={IsForGramHandler}>무게</S.TypeSelectBtn>
+            <S.TypeSelectBtn type={"right"} isForGram={isForGram} className="btn btn-info" onClick={IsForCalcHandler}>칼로리</S.TypeSelectBtn>
           </div>
-          <button className="btn btn-info calc_btn" onClick={onClickHandler}>계산</button>
+          <S.CalcBtn className="btn btn-info" onClick={onClickHandler}>계산</S.CalcBtn>
         </div>
-    </div>
+    </S.FormContainer>
   );
 }
 
