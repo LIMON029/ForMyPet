@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const BtnContainer = styled.div`
     display: flex;
@@ -19,7 +20,7 @@ export const BtnContainer = styled.div`
     }
 `;
 
-export const MyBtn = styled.a`
+export const MyBtn = styled(Link)`
     height: 80px;
     line-height: 66px;
     width: 100%;
