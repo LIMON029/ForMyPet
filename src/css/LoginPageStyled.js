@@ -6,7 +6,6 @@ export const FormContainer=styled.div`
     border: 3px solid black;
     background: #ffffff;
     border-radius: 10px;
-    height: 260px;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -36,7 +35,6 @@ export const BtnContainer = styled.div`
     justify-content: space-between;
     align-items: stretch;
     padding: 0;
-    height: 75px;
 `;
 
 export const HorBtnContainer = styled.div`
@@ -54,6 +52,7 @@ export const MyBtn = styled.button`
     margin-right: ${(props) => props.isLeft ? "5px" : null};
     background-color: ${(props) => props.isLeft ? "#0089ff" : null};
     border-color: ${(props) => props.isLeft ? "#0089ff" : null};
+    height: 50px;
     &:hover {
         background-color: ${(props) => props.isLeft ? "#0071d2" : null};
         border-color: ${(props) => props.isLeft ? "#0071d2" : null};
@@ -62,4 +61,8 @@ export const MyBtn = styled.button`
 
 export const InputStyle=styled.input`
     margin-bottom: 10px;
+`;
+
+export const KakaoBtn=styled.img`
+    width: 100%;
 `;

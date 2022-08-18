@@ -14,9 +14,9 @@ const GoToMainBtnStyle = styled(Link)`
 
 export function GoToMainBtn() {
     return (
-        <div class="titleWrapper">
+        <div className="titleWrapper">
             <GoToMainBtnStyle to="/">
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                <span className="glyphicon glyphicon-home" aria-hidden="true"></span>
                 &nbsp;메인으로
             </GoToMainBtnStyle>
         </div>

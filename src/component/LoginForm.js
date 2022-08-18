@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import * as S from "../css/LoginPageStyled"
+import {KAKAO_REST_KEY, KAKAO_REDIRECT_URL, KAKAO_AUTH_URL } from '../GlobalVariables';
 
 function LoginForm() {
+    const KAKAO_PATH = `${KAKAO_AUTH_URL}/oauth/authorize?client_id=${KAKAO_REST_KEY}&redirect_uri=${KAKAO_REDIRECT_URL}&response_type=code`;
     const id_reg = /[^a-zA-Z0-9_]/g;
     const pwd_reg = /[^a-zA-Z0-9_~!]/g;;
     const [id, setId] = useState("");
@@ -38,7 +40,8 @@ function LoginForm() {
     
     return (
         <S.FormContainer>
-            <form onSubmit={(event) => event.preventDefault()}>
+            { false
+            ? <form onSubmit={(event) => event.preventDefault()}>
                 <label htmlFor='id_input'>아이디</label>
                 <S.InputStyle
                     type="text"
@@ -65,9 +68,13 @@ function LoginForm() {
                         <S.MyBtn isTop={true} isLeft={true} className='btn btn-primary' onClick={onClickLoginBtn}>로그인</S.MyBtn>
                         <S.MyBtn isTop={true} isLeft={false} className='btn btn-primary' onClick={onClickLoginBtn}> 자동 로그인</S.MyBtn>
                     </S.HorBtnContainer>
-                    <S.MyBtn isTop={false} isLeft={false} className='btn btn-info'>카카오로 회원가입</S.MyBtn>
                 </S.BtnContainer>
-            </form>
+                </form>
+            : null
+            }
+            <a href={KAKAO_PATH}>
+                <S.KakaoBtn alt='kakao-login' src={require('../images/kakao_login.png')}/>
+            </a>
         </S.FormContainer>
     );
 }

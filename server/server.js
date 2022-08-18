@@ -11,6 +11,8 @@ app.get('/api', (req, res) => {
     res.send('Server Response Success');
 });
 
+app.use('/auth', require('./routes/KakaoAuth'));
+
 app.listen(PORT, () => {
     console.log(`Server run : http://localhost:${PORT}/`)
 });
