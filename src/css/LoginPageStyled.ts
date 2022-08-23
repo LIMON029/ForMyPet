@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+interface MyBtnProps {
+    isTop?: boolean;
+    isLeft?: boolean;
+    isRight?: boolean;
+}
+
 export const FormContainer=styled.div`
     width: 380px;
     padding: 20px;
@@ -46,7 +52,7 @@ export const HorBtnContainer = styled.div`
     align-content: center;
 `;
 
-export const MyBtn = styled.button`
+export const MyBtn = styled.button<MyBtnProps>`
     width: 100%;
     margin-bottom: ${(props) => props.isTop ? "5px" : null};
     margin-right: ${(props) => props.isLeft ? "5px" : null};

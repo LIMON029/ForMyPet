@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import {
   BrowserRouter,
   Routes,
@@ -11,12 +10,6 @@ import MainPage from "./routes/MainPage";
 import Test from './routes/Test';
 
 function App() {
-  // useEffect(() => {
-  //   axios.get('/api/test')
-  //     .then(res => console.log(res))
-  //     .catch((Error)=>{console.log(Error)})
-  // });
-
   return (
     <BrowserRouter>
       <Routes>

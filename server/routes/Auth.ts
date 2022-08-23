@@ -1,3 +1,5 @@
+export {};
+
 const express = require('express');
 const K = require('../../src/GlobalVariables');
 const { unlink, getToken } = require('./KakaoUtils');
@@ -18,5 +20,9 @@ router.get('/unlink', (req, res) => {
     }
     next();
 });
+
+router.post('/getJwtToken', (req, res) => {
+    
+});
  
-module.exports = router;
+export = router;

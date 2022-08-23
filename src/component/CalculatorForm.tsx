@@ -2,7 +2,20 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import * as S from "../css/CalculatorFormStyled";
 
-function Form({cal, gram, calc, isForGram, calChangeHandler, gramChangeHandler, calcChangeHandler, IsForGramHandler, IsForCalcHandler, clickHandler}) {
+interface FormProps {
+  cal: number;
+  gram: number;
+  calc: number;
+  isForGram: boolean;
+  calChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
+  gramChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
+  calcChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
+  IsForGramHandler: () => void;
+  IsForCalcHandler: () => void;
+  clickHandler: () => void;
+}
+
+function Form({cal, gram, calc, isForGram, calChangeHandler, gramChangeHandler, calcChangeHandler, IsForGramHandler, IsForCalcHandler, clickHandler}: FormProps): React.ReactElement {
   const onClickHandler = () => {
     if(cal > 0 && gram > 0 && calc > 0) {
       clickHandler();
@@ -51,8 +64,8 @@ function Form({cal, gram, calc, isForGram, calChangeHandler, gramChangeHandler, 
               onChange={calcChangeHandler}
               onKeyPress={enterKeyHandler} />
           <div>
-            <S.TypeSelectBtn type={"left"} isForGram={isForGram} className="btn btn-info" onClick={IsForGramHandler}>무게</S.TypeSelectBtn>
-            <S.TypeSelectBtn type={"right"} isForGram={isForGram} className="btn btn-info" onClick={IsForCalcHandler}>칼로리</S.TypeSelectBtn>
+            <S.TypeSelectBtn btntype={"left"} isForGram={isForGram} className="btn btn-info" onClick={IsForGramHandler}>무게</S.TypeSelectBtn>
+            <S.TypeSelectBtn btntype={"right"} isForGram={isForGram} className="btn btn-info" onClick={IsForCalcHandler}>칼로리</S.TypeSelectBtn>
           </div>
           <S.CalcBtn className="btn btn-info" onClick={onClickHandler}>계산</S.CalcBtn>
         </div>

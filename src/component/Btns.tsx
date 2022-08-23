@@ -12,7 +12,7 @@ const GoToMainBtnStyle = styled(Link)`
     }
 `;
 
-export function GoToMainBtn() {
+export function GoToMainBtn(): React.ReactElement {
     return (
         <div className="titleWrapper">
             <GoToMainBtnStyle to="/">

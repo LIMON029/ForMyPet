@@ -4,22 +4,22 @@ import Result from "../component/Result"
 import {GoToMainBtn} from "../component/Btns"
 
 function MainCalculator() {
-  const [cal, setCal] = useState(0);
-  const [gram, setGram] = useState(0);
-  const [forCalc, setForCalc] = useState(0);
-  const [isForGram, setIsForGram] = useState(true);
-  const [isSubmit, setIsSubmit] = useState(false);
+  const [cal, setCal] = useState<number>(0);
+  const [gram, setGram] = useState<number>(0);
+  const [forCalc, setForCalc] = useState<number>(0);
+  const [isForGram, setIsForGram] = useState<boolean>(true);
+  const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
-  const calChangeHandler = (event) => {
-    setCal(event.target.value);
+  const calChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCal(Number(event.target.value));
   };
 
-  const gramChangeHandler = (event) => {
-    setGram(event.target.value);
+  const gramChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setGram(Number(event.target.value));
   };
 
-  const forCalcChagneHandler = (event) => {
-    setForCalc(event.target.value);
+  const forCalcChagneHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setForCalc(Number(event.target.value));
   };
 
   const isForGramHandler = () => {

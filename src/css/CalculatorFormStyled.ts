@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+interface SelectedBtnType {
+    btntype: string;
+    isForGram: boolean;
+}
+
+
 export const FormContainer=styled.div`
     width: 380px;
     padding: 20px;
@@ -32,10 +38,10 @@ export const CalcBtn=styled.button`
     width: 100%;  
 `;
 
-export const TypeSelectBtn=styled.button`
+export const TypeSelectBtn=styled.button<SelectedBtnType>`
     width: 50%;
     margin-top: 10px;
-    border-radius: ${props => props.type === "left" ? "5px 0px 0px 5px" : "0px 5px 5px 0px"};
+    border-radius: ${props => props.btntype === "left" ? "5px 0px 0px 5px" : "0px 5px 5px 0px"};
     background-color: ${props => props.isForGram ? "#31b0d5" : null};
     border-color: ${props => props.isForGram ? "#269abc" : null};
     &:focus {

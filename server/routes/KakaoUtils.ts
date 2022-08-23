@@ -1,3 +1,5 @@
+export {};
+
 const { default: axios } = require('axios');
 const K = require('../../src/GlobalVariables');
 
@@ -67,7 +69,4 @@ function saveToken(token) {
     });
 }
 
-module.exports.unlink = unlink;
-module.exports.getToken = getToken;
-module.exports.getProfile = getProfile;
-module.exports.saveToken = saveToken;
+export {unlink, getToken, getProfile, saveToken};

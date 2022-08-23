@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "allowJs": true,
+      "module": "commonjs",
+      "target": "ES6",
+      "outDir": "./out",
+      "moduleResolution": "Node",
+      "esModuleInterop": true,
+      "lib": ["ES2015", "DOM", "DOM.Iterable"],
+      "jsx": "react-jsx"
+    },
+    "include": ["./src/**/*", "./server/**/*", "./config/**/*", "./models/**/*", "./migrations/**/*"],
+    "exclude": ["node_modules", "out"]
+  }

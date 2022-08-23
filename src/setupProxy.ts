@@ -7,5 +7,5 @@ module.exports =  function(app){
           target: SERVER_URL,
           changeOrigin: true
       })
-  )
+  );
 };
