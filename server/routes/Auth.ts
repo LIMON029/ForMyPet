@@ -2,7 +2,7 @@ export {};
 
 const express = require('express');
 const K = require('../../src/GlobalVariables');
-const { unlink, getToken } = require('./KakaoUtils');
+const { unlink, getToken } = require('../utils/KakaoUtils');
 
 const router = express.Router();
 

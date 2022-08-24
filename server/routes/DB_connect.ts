@@ -1,7 +1,7 @@
 export {};
 
 const express = require('express');
-const { findById, findAll } = require("../db_manage/db_utils");
+const { findById, findAll } = require("../utils/DB_utils.ts");
 
 const router = express.Router();
 
