@@ -7,9 +7,9 @@ const { upload } = require('../utils/FileUtil');
 
 const router = express.Router();
 
-fs.readdir('uploads', (error) => {
+fs.readdir('images', (error) => {
     if(error) {
-        fs.mkdirSync('../server/uploads');
+        fs.mkdirSync('../server/images');
         console.log('make dir');
     }
 })
