@@ -2,9 +2,20 @@ export {};
 
 const { feeds, users, memos } = require("../../models");
 
-async function deleteMemo() {
-    const firstId = 3;
-    await memos.destroy({where: {id: firstId}});
+type FeedType = 0 | 1 | 2;
+
+interface Memo {
+     feed_type:FeedType;
+     title:string;
+     days:string;
+     feeds_list:string;
+     feeds_cnt:number;
+     tot_cal:number;
+     user_id:number;
+}
+
+async function deleteMemo(id:number) {
+    await memos.destroy({where: {id: id}});
 
     const allMemos = await memos.findAll();
     for(let i=1; i <= allMemos.length; i++) {
@@ -23,10 +34,7 @@ async function findUserById(id:number) {
     }
 }
 
-async function addUser() {
-    const kakao_id = 212313212312;
-    const nickname = "sksk";
- 
+async function addUser(kakao_id:number, nickname:string) {
     const result = await users.create({
         kakao_id,
         nickname
@@ -56,15 +64,7 @@ async function findAll() {
     }
 }
 
-async function addMemo() {
-    const feed_type = 0;
-    const title = "AA";
-    const days = "월;화";
-    const feeds_list = "aa;ww";
-    const feeds_cnt = 2;
-    const tot_cal = 2000;
-    const user_id = 1;
- 
+async function addMemo({feed_type, title, days, feeds_list, feeds_cnt, tot_cal, user_id}: Memo) {
     const result = await memos.create({
         feed_type, title, days, feeds_list, feeds_cnt, tot_cal, user_id
     });

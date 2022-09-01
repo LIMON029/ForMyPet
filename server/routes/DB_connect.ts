@@ -21,9 +21,9 @@ router.post('/findById', (req, res) => {
     func(); 
 });
 
-router.post('/add', (req, res) => {
+router.post('/addMemo', (req, res) => {
     const func = async () => {
-        const result = await addMemo();
+        const result = await addMemo(req.body.data);
         res.json(result);
     }
     func();

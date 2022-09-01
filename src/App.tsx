@@ -4,6 +4,7 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
+import Modal from 'react-modal';
 import Diary from "./routes/Diary";
 import LoginPage from "./routes/LoginPage";
 import MainCalculator from './routes/MainCalculator';
@@ -23,5 +24,6 @@ function App() {
     </BrowserRouter>
   );
 }
+Modal.setAppElement('#root');
 
 export default App;

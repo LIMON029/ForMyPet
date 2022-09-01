@@ -103,3 +103,11 @@ export const FeedInfoWrapper = styled.div`
         justify-items: stretch;
     }
 `;
+
+export const AddMemoBtn = styled.span`
+    margin-left: 10px;
+    color: #9accef;
+    &:hover {
+        color: #639cc3;
+    }
+`;
